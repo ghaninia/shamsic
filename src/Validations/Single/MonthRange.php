@@ -1,8 +1,8 @@
 <?php
 
-namespace GhaniniaIR\Croni\Validations;
+namespace GhaniniaIR\SolarCroni\Validations;
 
-use GhaniniaIR\Cron\Validations\Interfaces\ValidationContract;
+use GhaniniaIR\SolarCron\Validations\Interfaces\ValidationContract;
 
 class MonthRange implements ValidationContract
 {

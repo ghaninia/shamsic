@@ -1,11 +1,8 @@
 <?php 
 
+namespace GhaniniaIR\SolarCron\Validations\Single;
 
-<?php
-
-namespace GhaniniaIR\Cron\Validations\Single;
-
-use GhaniniaIR\Cron\Validations\Interfaces\ValidationContract;
+use GhaniniaIR\SolarCron\Validations\Interfaces\ValidationContract;
 
 class SecondRange implements ValidationContract
 {

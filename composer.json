@@ -1,18 +1,22 @@
 {
-    "name": "ghaninia/croni",
+    "name": "ghaninia/solar-cron",
     "license": "MIT",
     "autoload": {
         "psr-4": {
-            "GhaniniaIR\\Croni\\": "src/"
+            "GhaniniaIR\\SolarCron\\": "src/"
         }
     },
     "authors": [
         {
-            "name": "ghaninia",
-            "email": "mohamadaminghaninia@gmail.com"
+            "name": "amen ghaninia",
+            "email": "info@ghaninia.ir"
         }
     ],
     "require": {
         "php": "^8.1.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "9.5",
+        "mockery/mockery": "^1.5"
     }
 }

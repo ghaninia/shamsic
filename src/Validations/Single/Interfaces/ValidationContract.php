@@ -1,6 +1,6 @@
 <?php
 
-namespace GhaniniaIR\Cron\Validations\Single\Interfaces;
+namespace GhaniniaIR\SolarCron\Validations\Single\Interfaces;
 
 interface ValidationContract
 {

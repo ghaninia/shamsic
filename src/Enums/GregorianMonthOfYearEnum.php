@@ -1,6 +1,6 @@
 <?php
 
-namespace GhaniniaIR\Cron\Enums;
+namespace GhaniniaIR\SolarCron\Enums;
 
 enum GregorianMonthOfYearEnum: int
 {

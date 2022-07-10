@@ -2,7 +2,7 @@
 
 namespace GhaniniaIR\SolarCron\Validations\Single;
 
-use GhaniniaIR\SolarCron\Validations\Interfaces\ValidationContract;
+use GhaniniaIR\SolarCron\Validations\Single\Interfaces\ValidationContract;
 
 class DaysOfWeekRange implements ValidationContract
 {

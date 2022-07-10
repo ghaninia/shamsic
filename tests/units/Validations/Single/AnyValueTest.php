@@ -1,11 +1,18 @@
 <?php
 
 use PHPUnit\Framework\TestCase;
+use GhaniniaIR\SolarCron\Validations\Single\AnyValue;
 
 class AnyValueTest extends TestCase
 {
-    public function test_it_can_be_validated()
+    /**
+     * @test
+     */
+    public function anyValue()
     {
-        $this->assertTrue(true);
+        $result = (new AnyValue())->passes("*");
+        $this->assertTrue($result);
+        $result = (new AnyValue())->passes("-");
+        $this->assertFalse($result);
     }
 }

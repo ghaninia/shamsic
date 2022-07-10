@@ -2,7 +2,7 @@
 
 namespace GhaniniaIR\SolarCron\Validations\Single;
 
-use GhaniniaIR\SolarCron\Validations\Interfaces\ValidationContract;
+use GhaniniaIR\SolarCron\Validations\Single\Interfaces\ValidationContract;
 
 class RangeOfValue implements ValidationContract
 {
@@ -10,40 +10,37 @@ class RangeOfValue implements ValidationContract
     public function __construct(
         protected int $min = 0,
         protected int $max = 59,
-        protected string $separator = "/"
     ) {
     }
 
     public function passes($value): bool
     {
-        $values = explode($this->separator, $value);
+        $values = explode("-", $value);
 
         if (count($values) !== 2) {
             return false;
         }
 
-        $firstValue = $values[0];
-        $secondValue = $values[1];
+        $firstValue = (int) $values[0];
+        $secondValue = (int) $values[1];
 
+        if ($firstValue < $this->min || $firstValue > $this->max) {
+            return false;
+        }
 
+        if ($secondValue < $this->min || $secondValue > $this->max) {
+            return false;
+        }
 
-        // foreach ($values as $value) {
-        //     ### when $value is not a number ###
-        //     if (!is_numeric($value)) {
-        //         return false;
-        //     }
-
-        //     ### when $value is not in range ###
-        //     if ($value < $this->min || $value > $this->max) {
-        //         return false;
-        //     }
-        // }
+        if ($firstValue > $secondValue) {
+            return false;
+        }
 
         return true;
     }
 
     public function message(): string
     {
-        return 'The second range must be a number between 0 and 59.';
+        return "The value must be between {$this->min} and {$this->max}";
     }
 }

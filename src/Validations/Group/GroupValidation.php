@@ -7,9 +7,9 @@ use GhaniniaIR\SolarCron\Validations\Single\Interfaces\ValidationContract;
 class GroupValidation
 {
 
-    protected array $validations = [];
-    protected bool $passed;
-    protected array $errors;
+    public array $validations = [];
+    public bool $passed;
+    public array $errors;
 
     /**
      * @param $value
@@ -54,6 +54,9 @@ class GroupValidation
             !in_array(false, $result) :
             in_array(true, $result);
 
+        ### clear validations after dispatch ###
+        $this->validations = [];
+        
         return $this;
     }
 

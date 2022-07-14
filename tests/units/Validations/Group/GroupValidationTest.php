@@ -6,33 +6,47 @@ use GhaniniaIR\SolarCron\Validations\Single\Interfaces\ValidationContract;
 
 class GroupValidationTest extends TestCase
 {
-
-    protected function setUp(): void
-    {
-        parent::setUp();
-
-        $this->instanceGroupValidation = new class extends GroupValidation
-        {
-            public array $validations = [];
-        };
-    }
-
-    /**
-     * @test
-     */
+    /** @test */
     public function setValidations()
     {
         $mock = $this->createMock(ValidationContract::class);
-        $mock->method('passes')->willReturn(true);
+        $mock->method('passes')->with(1)->willReturn(true);
 
         $groupValidation = $this->getMockBuilder(GroupValidation::class)
-            ->disableOriginalConstructor()
+            ->setConstructorArgs([1])
             ->getMock();
 
         $groupValidation
             ->expects($this->once())
             ->method('setValidations')
-            ->with($mock);
+            ->willReturnSelf();
 
+        $result = $groupValidation->setValidations($mock);
+        $this->assertInstanceOf(GroupValidation::class, $result);
+    }
+
+    /** @test */
+    public function dispatch()
+    {
+        $mock = $this->createMock(ValidationContract::class);
+        $mock->method('passes')->with(1)->willReturn(true);
+
+        $groupValidation = $this->getMockBuilder(GroupValidation::class)
+            ->setConstructorArgs([1])
+            ->getMock();
+
+        $groupValidation
+            ->expects($this->once())
+            ->method('setValidations')
+            ->willReturnSelf();
+
+        $groupValidation
+            ->expects($this->once())
+            ->method('dispatch')
+            ->willReturnSelf();
+
+        $groupValidation->setValidations($mock);
+        $result = $groupValidation->dispatch();
+        $this->assertInstanceOf(GroupValidation::class, $result);
     }
 }

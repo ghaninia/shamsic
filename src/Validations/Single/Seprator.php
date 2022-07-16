@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 namespace GhaniniaIR\SolarCron\Validations\Single;
 
@@ -8,25 +8,32 @@ class Seprator implements ValidationContract
 {
 
     public function __construct(
-        protected int $min = 0 ,
-        protected int $max = 59 , 
-    ){}
+        protected int $min,
+        protected int $max,
+    ) {
+    }
 
     public function passes($value): bool
     {
-        $values = explode( "," , $value);
-        
+        if (!str_contains($value , ",")) {
+            return false;
+        }
+
+        $values = explode(",", $value);
+
         foreach ($values as $value) {
 
-            $value = (int) $value;
-           
+            if(!is_numeric($value)) {
+                return false;
+            }
+
             ### when $value is not in range ###
             if ($value < $this->min || $value > $this->max) {
                 return false;
             }
         }
 
-        return true ;
+        return true;
     }
 
     public function message(): string

@@ -13,9 +13,8 @@ class GroupValidation
 
     /**
      * @param $value
-     * @param bool $sensitiveToValidations
      */
-    public function __construct(protected $value, protected bool $sensitiveToValidations = false)
+    public function __construct(protected $value)
     {
     }
 
@@ -37,23 +36,21 @@ class GroupValidation
 
     /**
      * dispatch validations and set passed status and errors
-     * @return bool
+     * @return self 
      */
-    public function dispatch()
+    public function dispatch() : self
     {
         $result = [];
 
         foreach ($this->validations as $validation) {
-            $result[] = $isValid = $validation->passes($this->value);
+            $result[get_class($validation)] = $isValid = $validation->passes($this->value);
             if (!$isValid) {
                 $this->errors[] = $validation->message();
             }
         }
 
-        $this->passed = $this->sensitiveToValidations ?
-            !in_array(false, $result) :
-            in_array(true, $result);
-
+        $this->passed = in_array(true, $result);
+     
         ### clear validations after dispatch ###
         $this->validations = [];
         

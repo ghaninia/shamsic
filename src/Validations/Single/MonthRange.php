@@ -8,6 +8,10 @@ class MonthRange implements ValidationContract
 {
     public function passes($value): bool
     {
+        if(!is_numeric($value)) {
+            return false;
+        }
+
         return $value >= 1 && $value <= 12;
     }
 

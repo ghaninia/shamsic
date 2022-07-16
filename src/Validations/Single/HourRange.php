@@ -8,6 +8,10 @@ class HourRange implements ValidationContract
 {
     public function passes($value): bool
     {
+        if(!is_numeric($value)) {
+            return false;
+        }
+
         return $value >= 0 && $value <= 23;
     }
 

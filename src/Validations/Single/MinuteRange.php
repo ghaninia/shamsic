@@ -4,10 +4,15 @@ namespace GhaniniaIR\SolarCron\Validations\Single;
 
 use GhaniniaIR\SolarCron\Validations\Single\Interfaces\ValidationContract;
 
-class SecondRange implements ValidationContract
+class MinuteRange implements ValidationContract
 {
     public function passes($value): bool
     {
+       
+        if(!is_numeric($value)) {
+            return false;
+        }
+
         return $value >= 0 && $value <= 59;
     }
 

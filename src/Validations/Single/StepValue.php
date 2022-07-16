@@ -16,7 +16,7 @@ class StepValue implements ValidationContract
         }
 
         $firstValue = $values[0];
-        $secondValue = (int) $values[1];
+        $secondValue = $values[1];
 
         if ($secondValue <= 0) {
             return false;
@@ -31,6 +31,6 @@ class StepValue implements ValidationContract
 
     public function message(): string
     {
-        return "The value must be between {$this->min} and {$this->max}";
+        return "The value must be in the format of '* / N'";
     }
 }

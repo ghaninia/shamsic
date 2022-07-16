@@ -91,4 +91,69 @@ class ExpressionRuleTest extends TestCase
         $this->expectException(\GhaniniaIR\SolarCron\Exceptions\ArgumentCountError::class);
         $rule = (new ExpressionRule('* * * *'))->dispath();
     }
+
+    /** 
+     * @test 
+     */
+    public function checkArgsProblematicAlternative1()
+    {
+        $rule = (new ExpressionRule('* * * * 8'))->dispath();
+        $errors = $rule->argsProblematic();
+        $this->assertEquals(4, $errors[0]);
+        $this->assertCount(1, $errors);
+    }
+
+    /** 
+     * @test 
+     */
+    public function checkArgsProblematicAlternative2()
+    {
+        $rule = (new ExpressionRule('* * * 100 8'))->dispath();
+        $errors = $rule->argsProblematic();
+        $this->assertEquals(3, $errors[0]);
+        $this->assertEquals(4, $errors[1]);
+        $this->assertCount(2, $errors);
+    }
+
+    /** 
+     * @test 
+     */
+    public function checkArgsProblematicAlternative3()
+    {
+        $rule = (new ExpressionRule('* * 500 100 8'))->dispath();
+        $errors = $rule->argsProblematic();
+        $this->assertEquals(2, $errors[0]);
+        $this->assertEquals(3, $errors[1]);
+        $this->assertEquals(4, $errors[2]);
+        $this->assertCount(3, $errors);
+    }
+    
+    /** 
+     * @test 
+     */
+    public function checkArgsProblematicAlternative4()
+    {
+        $rule = (new ExpressionRule('* 980 500 100 8'))->dispath();
+        $errors = $rule->argsProblematic();
+        $this->assertEquals(1, $errors[0]);
+        $this->assertEquals(2, $errors[1]);
+        $this->assertEquals(3, $errors[2]);
+        $this->assertEquals(4, $errors[3]);
+        $this->assertCount(4, $errors);
+    }
+    
+    /** 
+     * @test 
+     */
+    public function checkArgsProblematicAlternative5()
+    {
+        $rule = (new ExpressionRule('x 980 500 100 8'))->dispath();
+        $errors = $rule->argsProblematic();
+        $this->assertEquals(0, $errors[0]);
+        $this->assertEquals(1, $errors[1]);
+        $this->assertEquals(2, $errors[2]);
+        $this->assertEquals(3, $errors[3]);
+        $this->assertEquals(4, $errors[4]);
+        $this->assertCount(5, $errors);
+    }
 }

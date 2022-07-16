@@ -3,91 +3,13 @@
 namespace GhaniniaIR\SolarCron\Validations;
 
 use Exception;
+use GhaniniaIR\SolarCron\Classes\Expression;
 use GhaniniaIR\SolarCron\Exceptions\NotFoundedDriver;
 use GhaniniaIR\SolarCron\Exceptions\ArgumentCountError;
 use GhaniniaIR\SolarCron\Validations\Group\GroupValidation;
 
 class ExpressionRule
 {
-
-    private const ARGS_RULES = [
-        [
-            #### ARG 0 VALIDATIONS ####
-            \GhaniniaIR\SolarCron\Validations\Single\AnyValue::class,
-            \GhaniniaIR\SolarCron\Validations\Single\Seprator::class => [
-                'args' => [
-                    0, 59
-                ],
-            ],
-            \GhaniniaIR\SolarCron\Validations\Single\RangeOfValue::class => [
-                'args' => [
-                    0, 59
-                ],
-            ],
-            \GhaniniaIR\SolarCron\Validations\Single\StepValue::class,
-            \GhaniniaIR\SolarCron\Validations\Single\MinuteRange::class,
-        ], [
-            #### ARG 1 VALIDATIONS ####
-            \GhaniniaIR\SolarCron\Validations\Single\AnyValue::class,
-            \GhaniniaIR\SolarCron\Validations\Single\Seprator::class => [
-                'args' => [
-                    0, 23
-                ],
-            ],
-            \GhaniniaIR\SolarCron\Validations\Single\RangeOfValue::class => [
-                'args' => [
-                    0, 23
-                ],
-            ],
-            \GhaniniaIR\SolarCron\Validations\Single\StepValue::class,
-            \GhaniniaIR\SolarCron\Validations\Single\HourRange::class,
-        ], [
-            #### ARG 2 VALIDATIONS ####
-            \GhaniniaIR\SolarCron\Validations\Single\AnyValue::class,
-            \GhaniniaIR\SolarCron\Validations\Single\Seprator::class => [
-                'args' => [
-                    1, 31
-                ],
-            ],
-            \GhaniniaIR\SolarCron\Validations\Single\RangeOfValue::class => [
-                'args' => [
-                    1, 31
-                ],
-            ],
-            \GhaniniaIR\SolarCron\Validations\Single\StepValue::class,
-            \GhaniniaIR\SolarCron\Validations\Single\DaysOfMonthRange::class,
-        ], [
-            #### ARG 3 VALIDATIONS ####
-            \GhaniniaIR\SolarCron\Validations\Single\AnyValue::class,
-            \GhaniniaIR\SolarCron\Validations\Single\Seprator::class => [
-                'args' => [
-                    1, 12
-                ],
-            ],
-            \GhaniniaIR\SolarCron\Validations\Single\RangeOfValue::class => [
-                'args' => [
-                    1, 12
-                ],
-            ],
-            \GhaniniaIR\SolarCron\Validations\Single\StepValue::class,
-            \GhaniniaIR\SolarCron\Validations\Single\MonthRange::class,
-        ], [
-            #### ARG 4 VALIDATIONS ####
-            \GhaniniaIR\SolarCron\Validations\Single\AnyValue::class,
-            \GhaniniaIR\SolarCron\Validations\Single\Seprator::class => [
-                'args' => [
-                    0, 6
-                ],
-            ],
-            \GhaniniaIR\SolarCron\Validations\Single\RangeOfValue::class => [
-                'args' => [
-                    0, 6
-                ],
-            ],
-            \GhaniniaIR\SolarCron\Validations\Single\StepValue::class,
-            \GhaniniaIR\SolarCron\Validations\Single\DaysOfWeekRange::class,
-        ]
-    ];
 
     private bool $passed;
     private array $errors;
@@ -139,7 +61,7 @@ class ExpressionRule
     {
         $rules = [];
 
-        foreach (SELF::ARGS_RULES[$index] as $driver => $options) {
+        foreach (Expression::STRUCTURE[$index] as $driver => $options) {
 
             $driver = is_string($options) ? $options : $driver;
 

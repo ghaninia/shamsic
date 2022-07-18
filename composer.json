@@ -3,7 +3,7 @@
     "license": "MIT",
     "autoload": {
         "psr-4": {
-            "GhaniniaIR\\SolarCron\\": "src/"
+            "GhaniniaIR\\Schedule\\": "src/"
         },
         "files": [
             "src/helper.php"

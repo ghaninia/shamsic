@@ -1,10 +1,10 @@
 <?php
 
-namespace GhaniniaIR\SolarCron\Statements\Contracts;
+namespace GhaniniaIR\Schedule\Statements\Contracts;
 
 use DateTime;
 use DateTimeZone;
-use GhaniniaIR\SolarCron\Structrue\JalaliCalender;
+use GhaniniaIR\Schedule\Structrue\JalaliCalender;
 
 abstract class StatementArgumentContract 
 {

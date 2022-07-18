@@ -1,8 +1,8 @@
 <?php
 
-namespace GhaniniaIR\SolarCron\Statements\Arguments\Second;
+namespace GhaniniaIR\Schedule\Statements\Arguments\Second;
 
-use GhaniniaIR\SolarCron\Statements\Contracts\StatementArgumentContract;
+use GhaniniaIR\Schedule\Statements\Contracts\StatementArgumentContract;
 
 class Seprator extends StatementArgumentContract
 {

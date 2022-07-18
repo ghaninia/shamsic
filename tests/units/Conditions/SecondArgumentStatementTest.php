@@ -1,11 +1,11 @@
 <?php
 
 use PHPUnit\Framework\TestCase;
-use GhaniniaIR\SolarCron\Structrue\JalaliCalender;
-use GhaniniaIR\SolarCron\Statements\Arguments\Second\Seprator;
-use GhaniniaIR\SolarCron\Statements\Arguments\Second\HourRange;
-use GhaniniaIR\SolarCron\Statements\Arguments\Second\StepValue;
-use GhaniniaIR\SolarCron\Statements\Arguments\Second\RangeOfValue;
+use GhaniniaIR\Schedule\Structrue\JalaliCalender;
+use GhaniniaIR\Schedule\Statements\Arguments\Second\Seprator;
+use GhaniniaIR\Schedule\Statements\Arguments\Second\HourRange;
+use GhaniniaIR\Schedule\Statements\Arguments\Second\StepValue;
+use GhaniniaIR\Schedule\Statements\Arguments\Second\RangeOfValue;
 
 class SecondArgumentStatementTest extends TestCase
 {

@@ -1,7 +1,7 @@
 <?php
 
 use PHPUnit\Framework\TestCase;
-use GhaniniaIR\SolarCron\Validations\Single\Seprator;
+use GhaniniaIR\Schedule\Validations\Single\Seprator;
 
 class SepratorTest extends TestCase
 {

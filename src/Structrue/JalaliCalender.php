@@ -1,6 +1,6 @@
 <?php
 
-namespace GhaniniaIR\SolarCron\Structrue;
+namespace GhaniniaIR\Schedule\Structrue;
 
 use DateTime;
 use DateTimeZone;

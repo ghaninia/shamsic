@@ -1,6 +1,6 @@
 <?php
 
-use GhaniniaIR\SolarCron\Validations\ExpressionRule;
+use GhaniniaIR\Schedule\Validations\ExpressionRule;
 use PHPUnit\Framework\TestCase;
 
 class ExpressionRuleTest extends TestCase
@@ -83,7 +83,7 @@ class ExpressionRuleTest extends TestCase
      */
     public function exceptionErrorsWhenTooFewArgs()
     {
-        $this->expectException(\GhaniniaIR\SolarCron\Exceptions\ArgumentCountError::class);
+        $this->expectException(\GhaniniaIR\Schedule\Exceptions\ArgumentCountError::class);
         $rule = (new ExpressionRule('* * * *'))->dispath();
     }
 
@@ -92,7 +92,7 @@ class ExpressionRuleTest extends TestCase
      */
     public function exceptionErrorsWhenTooMoreArgs()
     {
-        $this->expectException(\GhaniniaIR\SolarCron\Exceptions\ArgumentCountError::class);
+        $this->expectException(\GhaniniaIR\Schedule\Exceptions\ArgumentCountError::class);
         $rule = (new ExpressionRule('* * * *'))->dispath();
     }
 

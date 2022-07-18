@@ -1,7 +1,7 @@
 <?php
 
 use PHPUnit\Framework\TestCase;
-use GhaniniaIR\SolarCron\Validations\Single\MonthRange;
+use GhaniniaIR\Schedule\Validations\Single\MonthRange;
 
 class MonthRangeTest extends TestCase
 {

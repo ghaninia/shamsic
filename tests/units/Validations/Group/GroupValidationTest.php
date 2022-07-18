@@ -1,8 +1,8 @@
 <?php
 
 use PHPUnit\Framework\TestCase;
-use GhaniniaIR\SolarCron\Validations\Group\GroupValidation;
-use GhaniniaIR\SolarCron\Validations\Single\Interfaces\ValidationContract;
+use GhaniniaIR\Schedule\Validations\Group\GroupValidation;
+use GhaniniaIR\Schedule\Validations\Single\Interfaces\ValidationContract;
 
 class GroupValidationTest extends TestCase
 {

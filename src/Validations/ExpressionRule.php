@@ -1,12 +1,12 @@
 <?php
 
-namespace GhaniniaIR\SolarCron\Validations;
+namespace GhaniniaIR\Schedule\Validations;
 
 use Exception;
-use GhaniniaIR\SolarCron\Structrue\Expression;
-use GhaniniaIR\SolarCron\Exceptions\NotFoundedDriver;
-use GhaniniaIR\SolarCron\Exceptions\ArgumentCountError;
-use GhaniniaIR\SolarCron\Validations\Group\GroupValidation;
+use GhaniniaIR\Schedule\Structrue\Expression;
+use GhaniniaIR\Schedule\Exceptions\NotFoundedDriver;
+use GhaniniaIR\Schedule\Exceptions\ArgumentCountError;
+use GhaniniaIR\Schedule\Validations\Group\GroupValidation;
 
 class ExpressionRule
 {

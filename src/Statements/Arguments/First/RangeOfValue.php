@@ -1,8 +1,8 @@
 <?php
 
-namespace GhaniniaIR\SolarCron\Statements\Arguments\First;
+namespace GhaniniaIR\Schedule\Statements\Arguments\First;
 
-use GhaniniaIR\SolarCron\Statements\Contracts\StatementArgumentContract;
+use GhaniniaIR\Schedule\Statements\Contracts\StatementArgumentContract;
 
 class RangeOfValue extends StatementArgumentContract
 {

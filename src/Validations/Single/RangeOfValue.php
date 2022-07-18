@@ -1,8 +1,8 @@
 <?php
 
-namespace GhaniniaIR\SolarCron\Validations\Single;
+namespace GhaniniaIR\Schedule\Validations\Single;
 
-use GhaniniaIR\SolarCron\Validations\Single\Interfaces\ValidationContract;
+use GhaniniaIR\Schedule\Validations\Single\Interfaces\ValidationContract;
 
 class RangeOfValue implements ValidationContract
 {

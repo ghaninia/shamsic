@@ -1,8 +1,8 @@
 <?php
 
-namespace GhaniniaIR\SolarCron\Validations\Group;
+namespace GhaniniaIR\Schedule\Validations\Group;
 
-use GhaniniaIR\SolarCron\Validations\Single\Interfaces\ValidationContract;
+use GhaniniaIR\Schedule\Validations\Single\Interfaces\ValidationContract;
 
 class GroupValidation
 {

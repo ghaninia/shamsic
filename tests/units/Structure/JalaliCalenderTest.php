@@ -2,7 +2,7 @@
 
 use Morilog\Jalali\Jalalian;
 use PHPUnit\Framework\TestCase;
-use GhaniniaIR\SolarCron\Structrue\JalaliCalender;
+use GhaniniaIR\Schedule\Structrue\JalaliCalender;
 
 class JalaliCalenderTest extends TestCase
 {

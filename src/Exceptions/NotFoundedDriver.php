@@ -1,6 +1,6 @@
 <?php
 
-namespace GhaniniaIR\SolarCron\Exceptions;
+namespace GhaniniaIR\Schedule\Exceptions;
 
 use Exception;
 

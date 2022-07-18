@@ -8,14 +8,12 @@ use Morilog\Jalali\Jalalian;
 
 class JalaliCalender
 {
-    private Datetime $dateTime;
-    private DateTimeZone $timezone;
     private $jalaliDateTime;
 
-    public function __construct(DateTime $dateTime = null, DateTimeZone $timezone = null)
-    {
-        $this->dateTime = $dateTime;
-        $this->timezone = $timezone;
+    public function __construct(
+        protected ?DateTime $dateTime = null,
+        protected ?DateTimeZone $timezone = null
+    ) {
         $this->jalaliDateTime = Jalalian::fromDateTime($dateTime, $timezone);
     }
 
@@ -108,5 +106,4 @@ class JalaliCalender
     {
         return $this->jalaliDateTime->format('W');
     }
-
 }

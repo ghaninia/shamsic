@@ -16,17 +16,17 @@ use GhaniniaIR\SolarCron\Validations\Single\{
 
 class Expression
 {
-    CONST STRUCTURE = [
+    const STRUCTURE = [
         [
             #### ARG 0 VALIDATIONS ####
             AnyValue::class => [
-                "condition" => false ,
+                "condition" => true,
             ],
             Seprator::class => [
                 'args' => [
                     0, 59
                 ],
-                "condition" => 
+                "condition" => []
             ],
             RangeOfValue::class => [
                 'args' => [
@@ -35,7 +35,7 @@ class Expression
             ],
             StepValue::class,
             MinuteRange::class => [
-                "condition" => \GhaniniaIR\SolarCron\Conditions\Arguments\First\MinuteRange::class ,
+                "condition" => \GhaniniaIR\SolarCron\Conditions\Arguments\First\MinuteRange::class,
             ],
         ], [
             #### ARG 1 VALIDATIONS ####

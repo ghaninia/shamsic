@@ -2,101 +2,115 @@
 
 namespace GhaniniaIR\SolarCron\Structrue;
 
-use GhaniniaIR\SolarCron\Validations\Single\{
-    AnyValue,
-    Seprator,
-    RangeOfValue,
-    StepValue,
-    MinuteRange,
-    HourRange,
-    DaysOfMonthRange,
-    MonthRange,
-    DaysOfWeekRange,
-};
-
 class Expression
 {
+
+    /**
+     * cron job expression
+     * cron job expression contains 5 parts
+     * part 1 = minute
+     * part 2 = hour
+     * part 3 = day of month
+     * part 4 = month
+     * part 5 = day of week
+     */
     const STRUCTURE = [
         [
-            #### ARG 0 VALIDATIONS ####
-            AnyValue::class => [
+            /**
+             * part 1 = minute
+             */
+
+
+            \GhaniniaIR\SolarCron\Validations\Single\AnyValue::class => [
                 "condition" => true,
             ],
-            Seprator::class => [
+            \GhaniniaIR\SolarCron\Validations\Single\Seprator::class => [
                 'args' => [
                     0, 59
                 ],
-                "condition" => []
+                "condition" => \GhaniniaIR\SolarCron\Conditions\Arguments\First\Seprator::class
             ],
-            RangeOfValue::class => [
+            \GhaniniaIR\SolarCron\Validations\Single\RangeOfValue::class => [
                 'args' => [
                     0, 59
                 ],
+                "condition" => \GhaniniaIR\SolarCron\Conditions\Arguments\First\RangeOfValue::class
             ],
-            StepValue::class,
-            MinuteRange::class => [
+            \GhaniniaIR\SolarCron\Validations\Single\StepValue::class => [
+                "condition" => \GhaniniaIR\SolarCron\Conditions\Arguments\First\StepValue::class,
+            ],
+            \GhaniniaIR\SolarCron\Validations\Single\MinuteRange::class => [
                 "condition" => \GhaniniaIR\SolarCron\Conditions\Arguments\First\MinuteRange::class,
             ],
+
         ], [
-            #### ARG 1 VALIDATIONS ####
-            AnyValue::class,
-            Seprator::class => [
+            /**
+             * part 2 = hour
+             */
+            \GhaniniaIR\SolarCron\Validations\Single\AnyValue::class,
+            \GhaniniaIR\SolarCron\Validations\Single\Seprator::class => [
                 'args' => [
                     0, 23
                 ],
             ],
-            RangeOfValue::class => [
+            \GhaniniaIR\SolarCron\Validations\Single\RangeOfValue::class => [
                 'args' => [
                     0, 23
                 ],
             ],
-            StepValue::class,
-            HourRange::class,
+            \GhaniniaIR\SolarCron\Validations\Single\StepValue::class,
+            \GhaniniaIR\SolarCron\Validations\Single\HourRange::class,
         ], [
-            #### ARG 2 VALIDATIONS ####
-            AnyValue::class,
-            Seprator::class => [
+            /**
+             * part 3 = day of month
+             */
+            \GhaniniaIR\SolarCron\Validations\Single\AnyValue::class,
+            \GhaniniaIR\SolarCron\Validations\Single\Seprator::class => [
                 'args' => [
                     1, 31
                 ],
             ],
-            RangeOfValue::class => [
+            \GhaniniaIR\SolarCron\Validations\Single\RangeOfValue::class => [
                 'args' => [
                     1, 31
                 ],
             ],
-            StepValue::class,
-            DaysOfMonthRange::class,
+            \GhaniniaIR\SolarCron\Validations\Single\StepValue::class,
+            \GhaniniaIR\SolarCron\Validations\Single\DaysOfMonthRange::class,
         ], [
-            #### ARG 3 VALIDATIONS ####
-            AnyValue::class,
-            Seprator::class => [
+            /**
+             * part 4 = month
+             */
+            \GhaniniaIR\SolarCron\Validations\Single\AnyValue::class,
+            \GhaniniaIR\SolarCron\Validations\Single\Seprator::class => [
                 'args' => [
                     1, 12
                 ],
             ],
-            RangeOfValue::class => [
+            \GhaniniaIR\SolarCron\Validations\Single\RangeOfValue::class => [
                 'args' => [
                     1, 12
                 ],
             ],
-            StepValue::class,
-            MonthRange::class,
+            \GhaniniaIR\SolarCron\Validations\Single\StepValue::class,
+            \GhaniniaIR\SolarCron\Validations\Single\MonthRange::class,
         ], [
-            #### ARG 4 VALIDATIONS ####
-            AnyValue::class,
-            Seprator::class => [
+            /**
+             * part 5 = day of week
+             */
+            \GhaniniaIR\SolarCron\Validations\Single\AnyValue::class,
+            \GhaniniaIR\SolarCron\Validations\Single\Seprator::class => [
                 'args' => [
                     0, 6
                 ],
             ],
-            RangeOfValue::class => [
+            \GhaniniaIR\SolarCron\Validations\Single\RangeOfValue::class => [
                 'args' => [
                     0, 6
                 ],
             ],
-            StepValue::class,
-            DaysOfWeekRange::class,
+            \GhaniniaIR\SolarCron\Validations\Single\StepValue::class,
+            \GhaniniaIR\SolarCron\Validations\Single\DaysOfWeekRange::class,
         ]
     ];
 }

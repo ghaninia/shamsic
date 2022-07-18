@@ -10,8 +10,9 @@ abstract class ConditionArgumentContract
 {
     /**
      * @var mixed $value
+     * @var JalaliCalender|null $jalaliCalender
      */
-    public function __construct(protected $value)
+    public function __construct(protected mixed $value, private ?JalaliCalender $jalaliCalender = null)
     {
     }
 
@@ -21,9 +22,9 @@ abstract class ConditionArgumentContract
      * @var DateTimeZone|null $dateTimeZone
      * @return JalaliCalender
      */
-    public function jalaliCalender(DateTime $dateTime = null, DateTimeZone $dateTimeZone): JalaliCalender
+    public function jalaliCalender(DateTime $dateTime = null, DateTimeZone $dateTimeZone = null): JalaliCalender
     {
-        return new JalaliCalender($dateTime, $dateTimeZone);
+        return $this->jalaliCalender ?? new JalaliCalender($dateTime, $dateTimeZone);
     }
 
     /**

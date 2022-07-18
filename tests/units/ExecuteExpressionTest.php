@@ -2,6 +2,7 @@
 
 use PHPUnit\Framework\TestCase;
 use GhaniniaIR\Schedule\ExecuteExpression;
+use GhaniniaIR\Schedule\Structrue\JalaliCalender;
 
 class ExecuteExpressionTest extends TestCase
 {
@@ -13,7 +14,7 @@ class ExecuteExpressionTest extends TestCase
             ["5 0 * 8 *"],
             ["15 14 1 * *"],
             ["0 22 * * 1-5"],
-            ["0 0,12 1 */2 *"] ,
+            ["0 0,12 1 */2 *"],
             ["0-59 0-23 1-31 1-12 0-6"],
             ["0,59 0,23 1,31 1,12 0,6"],
             ["59 22 31 12 5"],
@@ -131,7 +132,7 @@ class ExecuteExpressionTest extends TestCase
         $this->assertEquals(4, $errors[2]);
         $this->assertCount(3, $errors);
     }
-    
+
     /** 
      * @test 
      */
@@ -145,7 +146,7 @@ class ExecuteExpressionTest extends TestCase
         $this->assertEquals(4, $errors[3]);
         $this->assertCount(4, $errors);
     }
-    
+
     /** 
      * @test 
      */
@@ -159,5 +160,33 @@ class ExecuteExpressionTest extends TestCase
         $this->assertEquals(3, $errors[3]);
         $this->assertEquals(4, $errors[4]);
         $this->assertCount(5, $errors);
+    }
+
+    /** @test */
+    public function canRunCallaback()
+    {
+        $rule = (new ExecuteExpression('* * * * *'))->dispath();
+        $result = $rule->canRunCallaback();
+        $this->assertTrue($result);
+    }
+
+    /** @test */
+    public function validDeepCheckMethodCanRunCallaback()
+    {
+        $dateTime = new DateTime('2020-01-01 01:20:00');
+        $jalaliDateTime = new JalaliCalender($dateTime);
+        $rule = (new ExecuteExpression('20 1 * * *', $jalaliDateTime))->dispath();
+        $result = $rule->canRunCallaback();
+        $this->assertTrue($result);
+    }
+
+    /** @test */
+    public function invalidDeepCheckMethodCanRunCallaback()
+    {
+        $dateTime = new DateTime('2020-01-01 01:20:00');
+        $jalaliDateTime = new JalaliCalender($dateTime);
+        $rule = (new ExecuteExpression('21 2 * * *', $jalaliDateTime))->dispath();
+        $result = $rule->canRunCallaback();
+        $this->assertFalse($result);
     }
 }

@@ -1,9 +1,9 @@
 <?php
 
-use GhaniniaIR\Schedule\Validations\ExpressionRule;
 use PHPUnit\Framework\TestCase;
+use GhaniniaIR\Schedule\ExecuteExpression;
 
-class ExpressionRuleTest extends TestCase
+class ExecuteExpressionTest extends TestCase
 {
 
     public function validExpression()
@@ -62,20 +62,20 @@ class ExpressionRuleTest extends TestCase
      * @test 
      * @dataProvider validExpression
      */
-    public function validExpressionRule($expression)
+    public function validExecuteExpression($expression)
     {
-        $rule = (new ExpressionRule($expression))->dispath();
-        $this->assertTrue($rule->passed());
+        $rule = (new ExecuteExpression($expression))->dispath();
+        $this->assertTrue($rule->isValid());
     }
 
     /** 
      * @test 
      * @dataProvider invalidExpression
      */
-    public function invalidExpressionRule($expression)
+    public function invalidExecuteExpression($expression)
     {
-        $rule = (new ExpressionRule($expression))->dispath();
-        $this->assertFalse($rule->passed());
+        $rule = (new ExecuteExpression($expression))->dispath();
+        $this->assertFalse($rule->isValid());
     }
 
     /** 
@@ -84,7 +84,7 @@ class ExpressionRuleTest extends TestCase
     public function exceptionErrorsWhenTooFewArgs()
     {
         $this->expectException(\GhaniniaIR\Schedule\Exceptions\ArgumentCountError::class);
-        $rule = (new ExpressionRule('* * * *'))->dispath();
+        $rule = (new ExecuteExpression('* * * *'))->dispath();
     }
 
     /** 
@@ -93,7 +93,7 @@ class ExpressionRuleTest extends TestCase
     public function exceptionErrorsWhenTooMoreArgs()
     {
         $this->expectException(\GhaniniaIR\Schedule\Exceptions\ArgumentCountError::class);
-        $rule = (new ExpressionRule('* * * *'))->dispath();
+        $rule = (new ExecuteExpression('* * * *'))->dispath();
     }
 
     /** 
@@ -101,7 +101,7 @@ class ExpressionRuleTest extends TestCase
      */
     public function checkArgsProblematicAlternative1()
     {
-        $rule = (new ExpressionRule('* * * * 8'))->dispath();
+        $rule = (new ExecuteExpression('* * * * 8'))->dispath();
         $errors = $rule->argsProblematic();
         $this->assertEquals(4, $errors[0]);
         $this->assertCount(1, $errors);
@@ -112,7 +112,7 @@ class ExpressionRuleTest extends TestCase
      */
     public function checkArgsProblematicAlternative2()
     {
-        $rule = (new ExpressionRule('* * * 100 8'))->dispath();
+        $rule = (new ExecuteExpression('* * * 100 8'))->dispath();
         $errors = $rule->argsProblematic();
         $this->assertEquals(3, $errors[0]);
         $this->assertEquals(4, $errors[1]);
@@ -124,7 +124,7 @@ class ExpressionRuleTest extends TestCase
      */
     public function checkArgsProblematicAlternative3()
     {
-        $rule = (new ExpressionRule('* * 500 100 8'))->dispath();
+        $rule = (new ExecuteExpression('* * 500 100 8'))->dispath();
         $errors = $rule->argsProblematic();
         $this->assertEquals(2, $errors[0]);
         $this->assertEquals(3, $errors[1]);
@@ -137,7 +137,7 @@ class ExpressionRuleTest extends TestCase
      */
     public function checkArgsProblematicAlternative4()
     {
-        $rule = (new ExpressionRule('* 980 500 100 8'))->dispath();
+        $rule = (new ExecuteExpression('* 980 500 100 8'))->dispath();
         $errors = $rule->argsProblematic();
         $this->assertEquals(1, $errors[0]);
         $this->assertEquals(2, $errors[1]);
@@ -151,7 +151,7 @@ class ExpressionRuleTest extends TestCase
      */
     public function checkArgsProblematicAlternative5()
     {
-        $rule = (new ExpressionRule('x 980 500 100 8'))->dispath();
+        $rule = (new ExecuteExpression('x 980 500 100 8'))->dispath();
         $errors = $rule->argsProblematic();
         $this->assertEquals(0, $errors[0]);
         $this->assertEquals(1, $errors[1]);

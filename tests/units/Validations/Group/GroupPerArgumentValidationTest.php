@@ -1,10 +1,10 @@
 <?php
 
 use PHPUnit\Framework\TestCase;
-use GhaniniaIR\Schedule\Validations\Group\GroupValidation;
+use GhaniniaIR\Schedule\Validations\Group\GroupPerArgumentValidation;
 use GhaniniaIR\Schedule\Validations\Single\Interfaces\ValidationContract;
 
-class GroupValidationTest extends TestCase
+class GroupPerArgumentValidationTest extends TestCase
 {
     /** @test */
     public function setValidations()
@@ -12,17 +12,17 @@ class GroupValidationTest extends TestCase
         $mock = $this->createMock(ValidationContract::class);
         $mock->method('passes')->with(1)->willReturn(true);
 
-        $groupValidation = $this->getMockBuilder(GroupValidation::class)
+        $GroupPerArgumentValidation = $this->getMockBuilder(GroupPerArgumentValidation::class)
             ->setConstructorArgs([1])
             ->getMock();
 
-        $groupValidation
+        $GroupPerArgumentValidation
             ->expects($this->once())
             ->method('setValidations')
             ->willReturnSelf();
 
-        $result = $groupValidation->setValidations($mock);
-        $this->assertInstanceOf(GroupValidation::class, $result);
+        $result = $GroupPerArgumentValidation->setValidations($mock);
+        $this->assertInstanceOf(GroupPerArgumentValidation::class, $result);
     }
 
     /** @test */
@@ -31,22 +31,22 @@ class GroupValidationTest extends TestCase
         $mock = $this->createMock(ValidationContract::class);
         $mock->method('passes')->with(1)->willReturn(true);
 
-        $groupValidation = $this->getMockBuilder(GroupValidation::class)
+        $GroupPerArgumentValidation = $this->getMockBuilder(GroupPerArgumentValidation::class)
             ->setConstructorArgs([1])
             ->getMock();
 
-        $groupValidation
+        $GroupPerArgumentValidation
             ->expects($this->once())
             ->method('setValidations')
             ->willReturnSelf();
 
-        $groupValidation
+        $GroupPerArgumentValidation
             ->expects($this->once())
             ->method('dispatch')
             ->willReturnSelf();
 
-        $groupValidation->setValidations($mock);
-        $result = $groupValidation->dispatch();
-        $this->assertInstanceOf(GroupValidation::class, $result);
+        $GroupPerArgumentValidation->setValidations($mock);
+        $result = $GroupPerArgumentValidation->dispatch();
+        $this->assertInstanceOf(GroupPerArgumentValidation::class, $result);
     }
 }

@@ -4,12 +4,13 @@ namespace GhaniniaIR\Schedule\Validations\Group;
 
 use GhaniniaIR\Schedule\Validations\Single\Interfaces\ValidationContract;
 
-class GroupValidation
+class GroupPerArgumentValidation
 {
 
-    public array $validations = [];
-    public bool $passed;
-    public array $errors;
+    private int   $correctIndex;
+    private array $validations = [];
+    private array $errors;
+    private bool  $passed;
 
     /**
      * @param $value
@@ -38,22 +39,31 @@ class GroupValidation
      * dispatch validations and set passed status and errors
      * @return self 
      */
-    public function dispatch() : self
+    public function dispatch(): self
     {
         $result = [];
 
+        $index = 0;
+
         foreach ($this->validations as $validation) {
-            $result[get_class($validation)] = $isValid = $validation->passes($this->value);
+
+            $result[] = $isValid = $validation->passes($this->value);
+
             if (!$isValid) {
                 $this->errors[] = $validation->message();
+            } else {
+                $this->correctIndex = $index;
+                break;
             }
+
+            $index++;
         }
 
         $this->passed = in_array(true, $result);
-     
+
         ### clear validations after dispatch ###
         $this->validations = [];
-        
+
         return $this;
     }
 
@@ -73,5 +83,14 @@ class GroupValidation
     public function getErrors(): array
     {
         return $this->errors;
+    }
+
+    /**
+     * get passed validations
+     * @return int
+     */
+    public function getCorrectIndex(): int
+    {
+        return $this->correctIndex;
     }
 }

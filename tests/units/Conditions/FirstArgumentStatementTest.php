@@ -7,7 +7,7 @@ use GhaniniaIR\SolarCron\Statements\Arguments\First\StepValue;
 use GhaniniaIR\SolarCron\Statements\Arguments\First\MinuteRange;
 use GhaniniaIR\SolarCron\Statements\Arguments\First\RangeOfValue;
 
-class FirstArgumentConditionTest extends TestCase
+class FirstArgumentStatementTest extends TestCase
 {
     protected JalaliCalender $jalaliCalenderMock;
 

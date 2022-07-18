@@ -3,7 +3,7 @@
 namespace GhaniniaIR\SolarCron\Validations;
 
 use Exception;
-use GhaniniaIR\SolarCron\Classes\Expression;
+use GhaniniaIR\SolarCron\Structrue\Expression;
 use GhaniniaIR\SolarCron\Exceptions\NotFoundedDriver;
 use GhaniniaIR\SolarCron\Exceptions\ArgumentCountError;
 use GhaniniaIR\SolarCron\Validations\Group\GroupValidation;

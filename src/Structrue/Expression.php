@@ -1,6 +1,6 @@
 <?php
 
-namespace GhaniniaIR\SolarCron\Classes;
+namespace GhaniniaIR\SolarCron\Structrue;
 
 use GhaniniaIR\SolarCron\Validations\Single\{
     AnyValue,
@@ -19,11 +19,14 @@ class Expression
     CONST STRUCTURE = [
         [
             #### ARG 0 VALIDATIONS ####
-            AnyValue::class,
+            AnyValue::class => [
+                "condition" => false ,
+            ],
             Seprator::class => [
                 'args' => [
                     0, 59
                 ],
+                "condition" => 
             ],
             RangeOfValue::class => [
                 'args' => [
@@ -31,7 +34,9 @@ class Expression
                 ],
             ],
             StepValue::class,
-            MinuteRange::class,
+            MinuteRange::class => [
+                "condition" => \GhaniniaIR\SolarCron\Conditions\Arguments\First\MinuteRange::class ,
+            ],
         ], [
             #### ARG 1 VALIDATIONS ####
             AnyValue::class,

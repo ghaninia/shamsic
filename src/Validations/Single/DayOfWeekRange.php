@@ -4,7 +4,7 @@ namespace GhaniniaIR\SolarCron\Validations\Single;
 
 use GhaniniaIR\SolarCron\Validations\Single\Interfaces\ValidationContract;
 
-class DaysOfWeekRange implements ValidationContract
+class DayOfWeekRange implements ValidationContract
 {
     public function passes($value): bool
     {

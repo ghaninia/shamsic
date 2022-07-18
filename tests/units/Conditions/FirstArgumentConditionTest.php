@@ -2,10 +2,10 @@
 
 use PHPUnit\Framework\TestCase;
 use GhaniniaIR\SolarCron\Structrue\JalaliCalender;
-use GhaniniaIR\SolarCron\Conditions\Arguments\First\Seprator;
-use GhaniniaIR\SolarCron\Conditions\Arguments\First\StepValue;
-use GhaniniaIR\SolarCron\Conditions\Arguments\First\MinuteRange;
-use GhaniniaIR\SolarCron\Conditions\Arguments\First\RangeOfValue;
+use GhaniniaIR\SolarCron\Statements\Arguments\First\Seprator;
+use GhaniniaIR\SolarCron\Statements\Arguments\First\StepValue;
+use GhaniniaIR\SolarCron\Statements\Arguments\First\MinuteRange;
+use GhaniniaIR\SolarCron\Statements\Arguments\First\RangeOfValue;
 
 class FirstArgumentConditionTest extends TestCase
 {

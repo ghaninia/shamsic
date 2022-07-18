@@ -1,12 +1,12 @@
 <?php
 
-namespace GhaniniaIR\SolarCron\Conditions\Contracts;
+namespace GhaniniaIR\SolarCron\Statements\Contracts;
 
 use DateTime;
 use DateTimeZone;
 use GhaniniaIR\SolarCron\Structrue\JalaliCalender;
 
-abstract class ConditionArgumentContract
+abstract class StatementArgumentContract 
 {
     /**
      * @var mixed $value

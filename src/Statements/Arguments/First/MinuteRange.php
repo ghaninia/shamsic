@@ -1,10 +1,10 @@
 <?php
 
-namespace GhaniniaIR\SolarCron\Conditions\Arguments\First;
+namespace GhaniniaIR\SolarCron\Statements\Arguments\First;
 
-use GhaniniaIR\SolarCron\Conditions\Contracts\ConditionArgumentContract;
+use GhaniniaIR\SolarCron\Statements\Contracts\StatementArgumentContract;
 
-class MinuteRange extends ConditionArgumentContract
+class MinuteRange extends StatementArgumentContract
 {
     public function passed(): bool
     {

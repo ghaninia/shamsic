@@ -61,15 +61,21 @@ class ExpressionRule
     {
         $rules = [];
 
-        foreach (Expression::STRUCTURE[$index] as $driver => $options) {
+        foreach (Expression::STRUCTURE[$index] as $driver) {
 
-            $driver = is_string($options) ? $options : $driver;
+            if (!is_array($driver) || !isset($driver['validation'])) {
+                throw new Exception('Driver is not instance of class!');
+            }
+
+            $validation = $driver['validation'];
+
+            $driver = is_string($validation) ? $validation : $validation["class"];
 
             if (!class_exists($driver))
-                throw new NotFoundedDriver("Class {$driver} not found!");
+                throw new NotFoundedDriver("Validation class: {$driver} not found!");
 
             try {
-                $args = is_array($options) ? $options['args'] ?? [] : [];
+                $args = is_array($validation) ? $validation['args'] ?? [] : [];
                 $rules[] = new $driver(...$args);
             } catch (Exception $e) {
                 throw new ArgumentCountError("Too few or more arguments to {$driver}!");

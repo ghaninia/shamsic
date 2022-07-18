@@ -19,98 +19,172 @@ class Expression
             /**
              * part 1 = minute
              */
-
-
-            \GhaniniaIR\SolarCron\Validations\Single\AnyValue::class => [
-                "condition" => true,
+            [
+                "validation" => \GhaniniaIR\SolarCron\Validations\Single\AnyValue::class,
+                "statement" => true,
             ],
-            \GhaniniaIR\SolarCron\Validations\Single\Seprator::class => [
-                'args' => [
-                    0, 59
+            [
+                "validation" => [
+                    "class" => \GhaniniaIR\SolarCron\Validations\Single\Seprator::class,
+                    "args" => [
+                        0, 59
+                    ],
                 ],
-                "condition" => \GhaniniaIR\SolarCron\Conditions\Arguments\First\Seprator::class
+                "statement" => \GhaniniaIR\SolarCron\Statements\Arguments\First\Seprator::class
             ],
-            \GhaniniaIR\SolarCron\Validations\Single\RangeOfValue::class => [
-                'args' => [
-                    0, 59
+            [
+                "validation" => [
+                    "class" => \GhaniniaIR\SolarCron\Validations\Single\RangeOfValue::class,
+                    "args" => [
+                        0, 59
+                    ],
                 ],
-                "condition" => \GhaniniaIR\SolarCron\Conditions\Arguments\First\RangeOfValue::class
+                "statement" => \GhaniniaIR\SolarCron\Statements\Arguments\First\RangeOfValue::class
             ],
-            \GhaniniaIR\SolarCron\Validations\Single\StepValue::class => [
-                "condition" => \GhaniniaIR\SolarCron\Conditions\Arguments\First\StepValue::class,
+            [
+                "validation" => \GhaniniaIR\SolarCron\Validations\Single\StepValue::class,
+                "statement"  => \GhaniniaIR\SolarCron\Statements\Arguments\First\StepValue::class,
             ],
-            \GhaniniaIR\SolarCron\Validations\Single\MinuteRange::class => [
-                "condition" => \GhaniniaIR\SolarCron\Conditions\Arguments\First\MinuteRange::class,
+            [
+                "validation" => \GhaniniaIR\SolarCron\Validations\Single\MinuteRange::class,
+                "statement"  => \GhaniniaIR\SolarCron\Statements\Arguments\First\MinuteRange::class,
             ],
-
         ], [
             /**
              * part 2 = hour
              */
-            \GhaniniaIR\SolarCron\Validations\Single\AnyValue::class,
-            \GhaniniaIR\SolarCron\Validations\Single\Seprator::class => [
-                'args' => [
-                    0, 23
-                ],
+            [
+                "validation" => \GhaniniaIR\SolarCron\Validations\Single\AnyValue::class,
+                "statement" => true,
             ],
-            \GhaniniaIR\SolarCron\Validations\Single\RangeOfValue::class => [
-                'args' => [
-                    0, 23
+            [
+                "validation" => [
+                    "class" => \GhaniniaIR\SolarCron\Validations\Single\Seprator::class,
+                    "args" => [
+                        0, 23
+                    ],
                 ],
+                "statement" => \GhaniniaIR\SolarCron\Statements\Arguments\Second\Seprator::class
             ],
-            \GhaniniaIR\SolarCron\Validations\Single\StepValue::class,
-            \GhaniniaIR\SolarCron\Validations\Single\HourRange::class,
+            [
+                "validation" => [
+                    "class" => \GhaniniaIR\SolarCron\Validations\Single\RangeOfValue::class,
+                    "args" => [
+                        0, 23
+                    ],
+                ],
+                "statement" => \GhaniniaIR\SolarCron\Statements\Arguments\Second\RangeOfValue::class
+            ],
+            [
+                "validation" => \GhaniniaIR\SolarCron\Validations\Single\StepValue::class,
+                "statement"  => \GhaniniaIR\SolarCron\Statements\Arguments\Second\StepValue::class,
+            ],
+            [
+                "validation" => \GhaniniaIR\SolarCron\Validations\Single\HourRange::class,
+                "statement"  => \GhaniniaIR\SolarCron\Statements\Arguments\Second\HourRange::class,
+            ],
         ], [
             /**
              * part 3 = day of month
              */
-            \GhaniniaIR\SolarCron\Validations\Single\AnyValue::class,
-            \GhaniniaIR\SolarCron\Validations\Single\Seprator::class => [
-                'args' => [
-                    1, 31
-                ],
+            [
+                "validation" => \GhaniniaIR\SolarCron\Validations\Single\AnyValue::class,
+                "statement" => true,
             ],
-            \GhaniniaIR\SolarCron\Validations\Single\RangeOfValue::class => [
-                'args' => [
-                    1, 31
+            [
+                "validation" => [
+                    "class" => \GhaniniaIR\SolarCron\Validations\Single\Seprator::class,
+                    "args" => [
+                        1, 31
+                    ],
                 ],
+                "statement" => \GhaniniaIR\SolarCron\Statements\Arguments\Third\Seprator::class
             ],
-            \GhaniniaIR\SolarCron\Validations\Single\StepValue::class,
-            \GhaniniaIR\SolarCron\Validations\Single\DaysOfMonthRange::class,
+            [
+                "validation" => [
+                    "class" => \GhaniniaIR\SolarCron\Validations\Single\RangeOfValue::class,
+                    "args" => [
+                        1, 31
+                    ],
+                ],
+                "statement" => \GhaniniaIR\SolarCron\Statements\Arguments\Third\RangeOfValue::class
+            ],
+            [
+                "validation" => \GhaniniaIR\SolarCron\Validations\Single\StepValue::class,
+                "statement"  => \GhaniniaIR\SolarCron\Statements\Arguments\Third\StepValue::class,
+            ],
+            [
+                "validation" => \GhaniniaIR\SolarCron\Validations\Single\DayOfMonthRange::class,
+                "statement"  => \GhaniniaIR\SolarCron\Statements\Arguments\Third\DayOfMonthRange::class,
+            ],
         ], [
             /**
              * part 4 = month
              */
-            \GhaniniaIR\SolarCron\Validations\Single\AnyValue::class,
-            \GhaniniaIR\SolarCron\Validations\Single\Seprator::class => [
-                'args' => [
-                    1, 12
-                ],
+            [
+                "validation" => \GhaniniaIR\SolarCron\Validations\Single\AnyValue::class,
+                "statement" => true,
             ],
-            \GhaniniaIR\SolarCron\Validations\Single\RangeOfValue::class => [
-                'args' => [
-                    1, 12
+            [
+                "validation" => [
+                    "class" => \GhaniniaIR\SolarCron\Validations\Single\Seprator::class,
+                    "args" => [
+                        1, 12
+                    ],
                 ],
+                "statement" => \GhaniniaIR\SolarCron\Statements\Arguments\Fourth\Seprator::class
             ],
-            \GhaniniaIR\SolarCron\Validations\Single\StepValue::class,
-            \GhaniniaIR\SolarCron\Validations\Single\MonthRange::class,
+            [
+                "validation" => [
+                    "class" => \GhaniniaIR\SolarCron\Validations\Single\RangeOfValue::class,
+                    "args" => [
+                        1, 12
+                    ],
+                ],
+                "statement" => \GhaniniaIR\SolarCron\Statements\Arguments\Fourth\RangeOfValue::class
+            ],
+            [
+                "validation" => \GhaniniaIR\SolarCron\Validations\Single\StepValue::class,
+                "statement"  => \GhaniniaIR\SolarCron\Statements\Arguments\Fourth\StepValue::class,
+            ],
+            [
+                "validation" => \GhaniniaIR\SolarCron\Validations\Single\MonthRange::class,
+                "statement"  => \GhaniniaIR\SolarCron\Statements\Arguments\Fourth\MonthRange::class,
+            ],
         ], [
             /**
              * part 5 = day of week
              */
-            \GhaniniaIR\SolarCron\Validations\Single\AnyValue::class,
-            \GhaniniaIR\SolarCron\Validations\Single\Seprator::class => [
-                'args' => [
-                    0, 6
-                ],
+            [
+                "validation" => \GhaniniaIR\SolarCron\Validations\Single\AnyValue::class,
+                "statement" => true,
             ],
-            \GhaniniaIR\SolarCron\Validations\Single\RangeOfValue::class => [
-                'args' => [
-                    0, 6
+            [
+                "validation" => [
+                    "class" => \GhaniniaIR\SolarCron\Validations\Single\Seprator::class,
+                    "args" => [
+                        0, 6
+                    ],
                 ],
+                "statement" => \GhaniniaIR\SolarCron\Statements\Arguments\Fifth\Seprator::class
             ],
-            \GhaniniaIR\SolarCron\Validations\Single\StepValue::class,
-            \GhaniniaIR\SolarCron\Validations\Single\DaysOfWeekRange::class,
+            [
+                "validation" => [
+                    "class" => \GhaniniaIR\SolarCron\Validations\Single\RangeOfValue::class,
+                    "args" => [
+                        0, 6
+                    ],
+                ],
+                "statement" => \GhaniniaIR\SolarCron\Statements\Arguments\Fifth\RangeOfValue::class
+            ],
+            [
+                "validation" => \GhaniniaIR\SolarCron\Validations\Single\StepValue::class,
+                "statement"  => \GhaniniaIR\SolarCron\Statements\Arguments\Fifth\StepValue::class,
+            ],
+            [
+                "validation" => \GhaniniaIR\SolarCron\Validations\Single\DayOfWeekRange::class,
+                "statement"  => \GhaniniaIR\SolarCron\Statements\Arguments\Fifth\DayOfWeekRange::class,
+            ],
         ]
     ];
 }

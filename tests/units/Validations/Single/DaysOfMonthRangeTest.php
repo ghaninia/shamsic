@@ -1,19 +1,19 @@
 <?php
 
 use PHPUnit\Framework\TestCase;
-use GhaniniaIR\SolarCron\Validations\Single\DaysOfMonthRange;
+use GhaniniaIR\SolarCron\Validations\Single\DayOfMonthRange;
 
-class DaysOfMonthRangeTest extends TestCase
+class DayOfMonthRangeTest extends TestCase
 {
     /**
      * @test
      */
-    public function daysOfMonthRange()
+    public function DayOfMonthRange()
     {
-        $daysOfMonthRange = new DaysOfMonthRange();
-        $this->assertTrue($daysOfMonthRange->passes(1));
-        $this->assertTrue($daysOfMonthRange->passes(31));
-        $this->assertFalse($daysOfMonthRange->passes(0));
-        $this->assertFalse($daysOfMonthRange->passes(32));
+        $DayOfMonthRange = new DayOfMonthRange();
+        $this->assertTrue($DayOfMonthRange->passes(1));
+        $this->assertTrue($DayOfMonthRange->passes(31));
+        $this->assertFalse($DayOfMonthRange->passes(0));
+        $this->assertFalse($DayOfMonthRange->passes(32));
     }
 }

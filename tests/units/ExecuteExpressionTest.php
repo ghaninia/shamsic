@@ -2,7 +2,7 @@
 
 use PHPUnit\Framework\TestCase;
 use GhaniniaIR\Schedule\ExecuteExpression;
-use GhaniniaIR\Schedule\Structrue\JalaliCalender;
+use GhaniniaIR\Schedule\Classes\JalaliCalender;
 
 class ExecuteExpressionTest extends TestCase
 {

@@ -2,11 +2,13 @@
 
 namespace GhaniniaIR\Schedule;
 
-class Schedule
+use GhaniniaIR\Schedule\Classes\PredeterminationDateTime;
+
+class Schedule extends PredeterminationDateTime
 {
     protected static array $schedules = [];
-    protected $scheduleCallable;
     protected $scheduleExpression;
+    protected $scheduleCallable;
 
     /**
      * add Cron Expression to schedules
@@ -25,12 +27,11 @@ class Schedule
      * @param string $expression
      * @return void 
      */
-    final protected function cron(string $expression)
+    final public function cron(string $expression)
     {
         $this->scheduleExpression = $expression;
         $this->add();
     }
-
 
     /**
      * set Cron Expression
@@ -38,9 +39,10 @@ class Schedule
      */
     private function add()
     {
-        self::$schedules[] = new PerSchedule(
+        static::$schedules[] = new PerSchedule(
             $this->scheduleExpression,
-            $this->scheduleCallable
+            $this->scheduleCallable,
+            $this->getCalender()
         );
     }
 
@@ -50,8 +52,12 @@ class Schedule
      */
     public static function run()
     {
-        foreach (self::$schedules as $schedule) {
+        foreach (static::$schedules as $schedule) {
             $schedule->run();
         }
+
+        static::$schedules = [] ;
+
+        return true;
     }
 }

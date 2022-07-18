@@ -1,7 +1,7 @@
 <?php
 
 use PHPUnit\Framework\TestCase;
-use GhaniniaIR\Schedule\Structrue\JalaliCalender;
+use GhaniniaIR\Schedule\Classes\JalaliCalender;
 use GhaniniaIR\Schedule\Statements\Arguments\First\Seprator;
 use GhaniniaIR\Schedule\Statements\Arguments\First\StepValue;
 use GhaniniaIR\Schedule\Statements\Arguments\First\MinuteRange;

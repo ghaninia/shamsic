@@ -2,7 +2,7 @@
 
 use PHPUnit\Framework\TestCase;
 use GhaniniaIR\Schedule\PerSchedule;
-use GhaniniaIR\Schedule\Structrue\JalaliCalender;
+use GhaniniaIR\Schedule\Classes\JalaliCalender;
 
 class PerScheduleTest extends TestCase
 {
@@ -44,5 +44,25 @@ class PerScheduleTest extends TestCase
         });
         $this->assertEquals($statement, $perSchedule->getCallaback());
         $this->assertIsCallable($perSchedule->getCallaback());
+    }
+
+    /** @test */
+    public function checkExecutePerSchedule()
+    {
+
+        $datetime = new DateTime("2012-01-01 20:00:00");
+        $jalaliDateTime = new JalaliCalender($datetime);
+
+        $perSchedule = new PerSchedule('* 20 * * *', $statement = function () {
+            return "test 1";
+        });
+
+        $this->assertEquals("test 1", $perSchedule->setCalender($jalaliDateTime)->run());
+
+        $perSchedule = new PerSchedule('* 21 * * *', $statement = function () {
+            return "test 1";
+        });
+
+        $this->assertEquals(false, $perSchedule->setCalender($jalaliDateTime)->run());
     }
 }

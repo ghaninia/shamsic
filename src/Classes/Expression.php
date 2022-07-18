@@ -1,6 +1,6 @@
 <?php
 
-namespace GhaniniaIR\Schedule\Structrue;
+namespace GhaniniaIR\Schedule\Classes;
 
 class Expression
 {

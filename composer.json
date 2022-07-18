@@ -4,10 +4,7 @@
     "autoload": {
         "psr-4": {
             "GhaniniaIR\\Schedule\\": "src/"
-        },
-        "files": [
-            "src/helper.php"
-        ]
+        }
     },
     "authors": [
         {

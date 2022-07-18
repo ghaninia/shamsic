@@ -2,14 +2,13 @@
 
 namespace GhaniniaIR\Schedule;
 
-use GhaniniaIR\Schedule\Structrue\JalaliCalender;
+use GhaniniaIR\Schedule\Classes\PredeterminationDateTime;
 
-class PerSchedule
+class PerSchedule extends PredeterminationDateTime
 {
     public function __construct(
         private string $expression,
         private $callback,
-        private ?JalaliCalender $jalaliCalender = null
     ) {
     }
 
@@ -34,7 +33,7 @@ class PerSchedule
      */
     public function run()
     {
-        $expression = new ExecuteExpression($this->expression, $this->jalaliCalender);
+        $expression = new ExecuteExpression($this->expression, $this->getCalender());
         $result = $expression->dispath()->canRunCallaback();
         $callback = $this->callback;
         return $result ? $callback() : false;

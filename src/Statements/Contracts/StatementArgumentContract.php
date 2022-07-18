@@ -4,7 +4,7 @@ namespace GhaniniaIR\Schedule\Statements\Contracts;
 
 use DateTime;
 use DateTimeZone;
-use GhaniniaIR\Schedule\Structrue\JalaliCalender;
+use GhaniniaIR\Schedule\Classes\JalaliCalender;
 
 abstract class StatementArgumentContract 
 {

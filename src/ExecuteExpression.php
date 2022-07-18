@@ -3,8 +3,8 @@
 namespace GhaniniaIR\Schedule;
 
 use Exception;
-use GhaniniaIR\Schedule\Structrue\Expression;
-use GhaniniaIR\Schedule\Structrue\JalaliCalender;
+use GhaniniaIR\Schedule\Classes\Expression;
+use GhaniniaIR\Schedule\Classes\JalaliCalender;
 use GhaniniaIR\Schedule\Exceptions\NotFoundedDriver;
 use GhaniniaIR\Schedule\Exceptions\ArgumentCountError;
 use GhaniniaIR\Schedule\Validations\Group\GroupPerArgumentValidation;
@@ -21,10 +21,11 @@ class ExecuteExpression
      * @param string $expression
      * @param JalaliCalender|null $jalaliCalender
      */
-    public function __construct(string $expression, protected ?JalaliCalender $jalaliCalender = null)
-    {
+    public function __construct(
+        string $expression,
+        protected ?JalaliCalender $jalaliCalender = null
+    ) {
         $this->expression = explode(' ', $expression);
-
         $this->validator();
     }
 

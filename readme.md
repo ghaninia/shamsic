@@ -24,6 +24,7 @@
 > This package supports `PHP 8.1+`.
 
 <hr />
+
 ## Install
 
 Via Composer

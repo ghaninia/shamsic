@@ -1,7 +1,7 @@
 <?php
 
 use PHPUnit\Framework\TestCase;
-use GhaniniaIR\Schedule\Validations\Single\AnyValue;
+use GhaniniaIR\Shamsic\Validations\Single\AnyValue;
 
 class AnyValueTest extends TestCase
 {

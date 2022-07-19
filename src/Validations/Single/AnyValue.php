@@ -1,8 +1,8 @@
 <?php
 
-namespace GhaniniaIR\Schedule\Validations\Single;
+namespace GhaniniaIR\Shamsic\Validations\Single;
 
-use GhaniniaIR\Schedule\Validations\Single\Interfaces\ValidationContract;
+use GhaniniaIR\Shamsic\Validations\Single\Interfaces\ValidationContract;
 
 class AnyValue implements ValidationContract
 {

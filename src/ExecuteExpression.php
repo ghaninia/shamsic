@@ -1,13 +1,13 @@
 <?php
 
-namespace GhaniniaIR\Schedule;
+namespace GhaniniaIR\Shamsic;
 
 use Exception;
-use GhaniniaIR\Schedule\Classes\Expression;
-use GhaniniaIR\Schedule\Classes\JalaliCalender;
-use GhaniniaIR\Schedule\Exceptions\NotFoundedDriver;
-use GhaniniaIR\Schedule\Exceptions\ArgumentCountError;
-use GhaniniaIR\Schedule\Validations\Group\GroupPerArgumentValidation;
+use GhaniniaIR\Shamsic\Classes\Expression;
+use GhaniniaIR\Shamsic\Classes\JalaliCalender;
+use GhaniniaIR\Shamsic\Exceptions\NotFoundedDriver;
+use GhaniniaIR\Shamsic\Exceptions\ArgumentCountError;
+use GhaniniaIR\Shamsic\Validations\Group\GroupPerArgumentValidation;
 
 class ExecuteExpression
 {

@@ -1,6 +1,6 @@
 <?php
 
-namespace GhaniniaIR\Schedule\Validations\Single\Interfaces;
+namespace GhaniniaIR\Shamsic\Validations\Single\Interfaces;
 
 interface ValidationContract
 {

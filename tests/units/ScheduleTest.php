@@ -1,7 +1,7 @@
 <?php
 
 use PHPUnit\Framework\TestCase;
-use GhaniniaIR\Schedule\Schedule;
+use GhaniniaIR\Shamsic\Schedule;
 
 class ScheduleTest extends TestCase
 {

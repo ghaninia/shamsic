@@ -1,11 +1,11 @@
 <?php
 
 use PHPUnit\Framework\TestCase;
-use GhaniniaIR\Schedule\Classes\JalaliCalender;
-use GhaniniaIR\Schedule\Statements\Arguments\Second\Seprator;
-use GhaniniaIR\Schedule\Statements\Arguments\Second\HourRange;
-use GhaniniaIR\Schedule\Statements\Arguments\Second\StepValue;
-use GhaniniaIR\Schedule\Statements\Arguments\Second\RangeOfValue;
+use GhaniniaIR\Shamsic\Classes\JalaliCalender;
+use GhaniniaIR\Shamsic\Statements\Arguments\Second\Seprator;
+use GhaniniaIR\Shamsic\Statements\Arguments\Second\HourRange;
+use GhaniniaIR\Shamsic\Statements\Arguments\Second\StepValue;
+use GhaniniaIR\Shamsic\Statements\Arguments\Second\RangeOfValue;
 
 class SecondArgumentStatementTest extends TestCase
 {

@@ -1,6 +1,6 @@
 <?php
 
-namespace GhaniniaIR\Schedule\Enums;
+namespace GhaniniaIR\Shamsic\Enums;
 
 enum GregorianMonthOfYearEnum: int
 {

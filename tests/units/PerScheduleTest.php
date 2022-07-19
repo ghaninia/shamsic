@@ -1,8 +1,8 @@
 <?php
 
 use PHPUnit\Framework\TestCase;
-use GhaniniaIR\Schedule\PerSchedule;
-use GhaniniaIR\Schedule\Classes\JalaliCalender;
+use GhaniniaIR\Shamsic\PerSchedule;
+use GhaniniaIR\Shamsic\Classes\JalaliCalender;
 
 class PerScheduleTest extends TestCase
 {

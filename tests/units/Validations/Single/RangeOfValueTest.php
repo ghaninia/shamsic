@@ -1,7 +1,7 @@
 <?php
 
 use PHPUnit\Framework\TestCase;
-use GhaniniaIR\Schedule\Validations\Single\RangeOfValue;
+use GhaniniaIR\Shamsic\Validations\Single\RangeOfValue;
 
 class RangeOfValueTest extends TestCase
 {

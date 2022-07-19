@@ -2,7 +2,7 @@
 
 use Morilog\Jalali\Jalalian;
 use PHPUnit\Framework\TestCase;
-use GhaniniaIR\Schedule\Classes\JalaliCalender;
+use GhaniniaIR\Shamsic\Classes\JalaliCalender;
 
 class JalaliCalenderTest extends TestCase
 {

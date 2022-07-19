@@ -1,7 +1,7 @@
 <?php
 
 use PHPUnit\Framework\TestCase;
-use GhaniniaIR\Schedule\Validations\Single\DayOfMonthRange;
+use GhaniniaIR\Shamsic\Validations\Single\DayOfMonthRange;
 
 class DayOfMonthRangeTest extends TestCase
 {

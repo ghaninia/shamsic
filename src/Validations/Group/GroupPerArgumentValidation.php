@@ -1,8 +1,8 @@
 <?php
 
-namespace GhaniniaIR\Schedule\Validations\Group;
+namespace GhaniniaIR\Shamsic\Validations\Group;
 
-use GhaniniaIR\Schedule\Validations\Single\Interfaces\ValidationContract;
+use GhaniniaIR\Shamsic\Validations\Single\Interfaces\ValidationContract;
 
 class GroupPerArgumentValidation
 {

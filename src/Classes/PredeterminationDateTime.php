@@ -1,8 +1,8 @@
 <?php
 
-namespace GhaniniaIR\Schedule\Classes;
+namespace GhaniniaIR\Shamsic\Classes;
 
-use GhaniniaIR\Schedule\Classes\JalaliCalender;
+use GhaniniaIR\Shamsic\Classes\JalaliCalender;
 
 class PredeterminationDateTime
 {

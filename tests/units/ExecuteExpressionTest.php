@@ -1,8 +1,8 @@
 <?php
 
 use PHPUnit\Framework\TestCase;
-use GhaniniaIR\Schedule\ExecuteExpression;
-use GhaniniaIR\Schedule\Classes\JalaliCalender;
+use GhaniniaIR\Shamsic\ExecuteExpression;
+use GhaniniaIR\Shamsic\Classes\JalaliCalender;
 
 class ExecuteExpressionTest extends TestCase
 {
@@ -84,7 +84,7 @@ class ExecuteExpressionTest extends TestCase
      */
     public function exceptionErrorsWhenTooFewArgs()
     {
-        $this->expectException(\GhaniniaIR\Schedule\Exceptions\ArgumentCountError::class);
+        $this->expectException(\GhaniniaIR\Shamsic\Exceptions\ArgumentCountError::class);
         $rule = (new ExecuteExpression('* * * *'))->dispath();
     }
 
@@ -93,7 +93,7 @@ class ExecuteExpressionTest extends TestCase
      */
     public function exceptionErrorsWhenTooMoreArgs()
     {
-        $this->expectException(\GhaniniaIR\Schedule\Exceptions\ArgumentCountError::class);
+        $this->expectException(\GhaniniaIR\Shamsic\Exceptions\ArgumentCountError::class);
         $rule = (new ExecuteExpression('* * * *'))->dispath();
     }
 

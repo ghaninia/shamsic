@@ -1,11 +1,11 @@
 <?php
 
 use PHPUnit\Framework\TestCase;
-use GhaniniaIR\Schedule\Classes\JalaliCalender;
-use GhaniniaIR\Schedule\Statements\Arguments\Fifth\Seprator;
-use GhaniniaIR\Schedule\Statements\Arguments\Fifth\StepValue;
-use GhaniniaIR\Schedule\Statements\Arguments\Fifth\RangeOfValue;
-use GhaniniaIR\Schedule\Statements\Arguments\Fifth\DayOfWeekRange;
+use GhaniniaIR\Shamsic\Classes\JalaliCalender;
+use GhaniniaIR\Shamsic\Statements\Arguments\Fifth\Seprator;
+use GhaniniaIR\Shamsic\Statements\Arguments\Fifth\StepValue;
+use GhaniniaIR\Shamsic\Statements\Arguments\Fifth\RangeOfValue;
+use GhaniniaIR\Shamsic\Statements\Arguments\Fifth\DayOfWeekRange;
 
 class FifthArgumentStatementTest extends TestCase
 {

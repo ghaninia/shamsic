@@ -1,8 +1,8 @@
 <?php
 
-namespace GhaniniaIR\Schedule;
+namespace GhaniniaIR\Shamsic;
 
-use GhaniniaIR\Schedule\Classes\PredeterminationDateTime;
+use GhaniniaIR\Shamsic\Classes\PredeterminationDateTime;
 
 class Schedule extends PredeterminationDateTime
 {

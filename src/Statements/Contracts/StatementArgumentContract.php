@@ -1,10 +1,10 @@
 <?php
 
-namespace GhaniniaIR\Schedule\Statements\Contracts;
+namespace GhaniniaIR\Shamsic\Statements\Contracts;
 
 use DateTime;
 use DateTimeZone;
-use GhaniniaIR\Schedule\Classes\JalaliCalender;
+use GhaniniaIR\Shamsic\Classes\JalaliCalender;
 
 abstract class StatementArgumentContract 
 {

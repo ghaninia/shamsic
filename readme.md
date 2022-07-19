@@ -48,7 +48,7 @@ The last three expressions of the cronJob are for the day of the month, the mont
 Now, open the file that will be executed by Cron Job (for this example output.php).
 
 ```php 
-use GhaniniaIR\Schedule\Schedule;
+use GhaniniaIR\Shamsic\Schedule;
 
 ### At every minute on saturday in farvardin.
 (new Schedule)

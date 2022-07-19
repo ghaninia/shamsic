@@ -1,8 +1,8 @@
 <?php
 
-namespace GhaniniaIR\Schedule\Statements\Arguments\Fourth;
+namespace GhaniniaIR\Shamsic\Statements\Arguments\Fourth;
 
-use GhaniniaIR\Schedule\Statements\Contracts\StatementArgumentContract;
+use GhaniniaIR\Shamsic\Statements\Contracts\StatementArgumentContract;
 
 class RangeOfValue extends StatementArgumentContract
 {

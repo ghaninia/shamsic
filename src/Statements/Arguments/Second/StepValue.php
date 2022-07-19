@@ -1,8 +1,8 @@
 <?php
 
-namespace GhaniniaIR\Schedule\Statements\Arguments\Second;
+namespace GhaniniaIR\Shamsic\Statements\Arguments\Second;
 
-use GhaniniaIR\Schedule\Statements\Contracts\StatementArgumentContract;
+use GhaniniaIR\Shamsic\Statements\Contracts\StatementArgumentContract;
 
 class StepValue extends StatementArgumentContract
 {

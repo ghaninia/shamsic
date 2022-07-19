@@ -1,6 +1,6 @@
 <?php
 
-namespace GhaniniaIR\Schedule\Classes;
+namespace GhaniniaIR\Shamsic\Classes;
 
 use DateTime;
 use DateTimeZone;

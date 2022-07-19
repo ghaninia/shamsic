@@ -1,6 +1,6 @@
 <?php
 
-use GhaniniaIR\Schedule\Validations\Single\HourRange;
+use GhaniniaIR\Shamsic\Validations\Single\HourRange;
 use PHPUnit\Framework\TestCase;
 
 class HourRangeTest extends TestCase

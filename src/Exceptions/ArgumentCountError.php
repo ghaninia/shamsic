@@ -1,6 +1,6 @@
 <?php
 
-namespace GhaniniaIR\Schedule\Exceptions;
+namespace GhaniniaIR\Shamsic\Exceptions;
 
 use Exception;
 

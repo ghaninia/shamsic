@@ -1,14 +1,14 @@
 {
-    "name": "ghaninia/solar-cron",
+    "name": "ghaninia/shamsic",
     "license": "MIT",
     "autoload": {
         "psr-4": {
-            "GhaniniaIR\\Schedule\\": "src/"
+            "GhaniniaIR\\Shamsic\\": "src/"
         }
     },
     "authors": [
         {
-            "name": "amen ghaninia",
+            "name": "amin ghaninia",
             "email": "info@ghaninia.ir"
         }
     ],

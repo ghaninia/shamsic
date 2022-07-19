@@ -1,8 +1,8 @@
 <?php
 
-namespace GhaniniaIR\Schedule\Statements\Arguments\First;
+namespace GhaniniaIR\Shamsic\Statements\Arguments\First;
 
-use GhaniniaIR\Schedule\Statements\Contracts\StatementArgumentContract;
+use GhaniniaIR\Shamsic\Statements\Contracts\StatementArgumentContract;
 
 class MinuteRange extends StatementArgumentContract
 {

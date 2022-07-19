@@ -1,8 +1,8 @@
 <?php
 
-namespace GhaniniaIR\Schedule\Statements\Arguments\Fifth;
+namespace GhaniniaIR\Shamsic\Statements\Arguments\Fifth;
 
-use GhaniniaIR\Schedule\Statements\Contracts\StatementArgumentContract;
+use GhaniniaIR\Shamsic\Statements\Contracts\StatementArgumentContract;
 
 class Seprator extends StatementArgumentContract
 {

@@ -1,7 +1,7 @@
 <?php
 
 use PHPUnit\Framework\TestCase;
-use GhaniniaIR\Schedule\Validations\Single\StepValue;
+use GhaniniaIR\Shamsic\Validations\Single\StepValue;
 
 class StepValueTest extends TestCase
 {

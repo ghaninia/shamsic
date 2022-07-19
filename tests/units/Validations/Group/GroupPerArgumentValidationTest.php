@@ -1,8 +1,8 @@
 <?php
 
 use PHPUnit\Framework\TestCase;
-use GhaniniaIR\Schedule\Validations\Group\GroupPerArgumentValidation;
-use GhaniniaIR\Schedule\Validations\Single\Interfaces\ValidationContract;
+use GhaniniaIR\Shamsic\Validations\Group\GroupPerArgumentValidation;
+use GhaniniaIR\Shamsic\Validations\Single\Interfaces\ValidationContract;
 
 class GroupPerArgumentValidationTest extends TestCase
 {

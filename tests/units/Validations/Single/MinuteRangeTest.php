@@ -1,7 +1,7 @@
 <?php
 
 use PHPUnit\Framework\TestCase;
-use GhaniniaIR\Schedule\Validations\Single\MinuteRange;
+use GhaniniaIR\Shamsic\Validations\Single\MinuteRange;
 
 class MinuteRangeTest extends TestCase
 {

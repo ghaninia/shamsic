@@ -43,6 +43,17 @@ You need to configure the cron job on the server ,The crontab command shown belo
 
 > '*' is a wildcard, meaning "every time". If you don't have any background about CronJob expressions and don't clear for you, follow the link <a href="https://crontab.guru/">crontab</a>.
 
+
+``` bash
+.---------------- minute (0 - 59) 
+|  .------------- hour (0 - 23)
+|  |  .---------- day of month (1 - 31)
+|  |  |  .------- month (1 - 12) 
+|  |  |  |  .---- day of week (0 - 6) 
+|  |  |  |  |
+*  *  *  *  *  command to be executed
+```
+
 The last three expressions of the cronJob are for the day of the month, the month and the day of the week. (Our main problem)
 
 

@@ -65,12 +65,6 @@ use GhaniniaIR\Shamsic\Schedule;
     })
     ->cron("* * * 3 1-5");
 
-### At every minute on day-of-month 5 in farvardin.
-(new Schedule)
-    ->call(function(){
-        echo "test";
-    })
-    ->cron("* * * 3 1-5");
 ... 
 
 
